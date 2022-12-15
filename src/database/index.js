@@ -1,5 +1,6 @@
 import pkg from "pg";
 const {Client} = pkg
+import "dotenv/config"
 
 const database = new Client(
   process.env.NODE_ENV === "test"
@@ -7,7 +8,7 @@ const database = new Client(
         user: process.env.DB_USER,
         host: "localhost",
         database: "tests_products",
-        password: process.env.DB_PASSWORD,
+        password: process.env.DB_PASSWORD, 
         port: 5432,
       }
     : {
